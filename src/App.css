@@ -1,0 +1,82 @@
+.people {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: auto;
+    column-gap: 20px;
+
+}
+
+.person {
+    padding: 20px;
+}
+
+.imageContainer {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    overflow: hidden;
+    margin: auto;
+
+}
+
+.imageContainer img {
+    width: 100%;
+    height: 100%;
+
+}
+
+.name {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgb(175, 169, 169);
+    font-size: 1.6rem;
+}
+
+.link {
+    text-align: center;
+    background-color: rgb(21, 247, 119);
+    padding: 10px;
+    width: fit-content;
+    margin: auto;
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.pagination {
+    display: flex;
+    gap: 8px;
+    width: fit-content;
+    margin: auto;
+
+}
+
+.btn {
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: rgb(229, 39, 39);
+    border: 0;
+    color: white;
+}
+
+.active {
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: rgb(28, 42, 243);
+    border: 0;
+    color: black;
+}
+
+button {
+    background-color: inherit;
+    border: 0;
+}
