@@ -11,7 +11,6 @@ const App = () => {
   const [buttons, setButtons] = useState([]);
   const maxPage = data.length;
   useEffect(() => {
-    setButtons([1, 2, 3, "...", maxPage]);
     if (page === 1) {
       setButtons([1, 2, 3, "...", maxPage])
     }
@@ -35,8 +34,6 @@ const App = () => {
     }
 
   }, [page, loading])
-
-
   if (loading) {
     return <Loading />
   }
