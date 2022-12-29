@@ -8,13 +8,12 @@ const App = () => {
   const url = 'https://api.github.com/users/john-smilga/followers?per_page=100';
   const { loading, data } = useFetch(url);
   const [page, setPage] = useState(1);
+  const [buttons, setButtons] = useState([]);
   const maxPage = data.length;
-  const [buttons, setButtons] = useState([1, 2, 3, "..."]);
   useEffect(() => {
-    console.log(page);
-    if (page < 1) {
-      setButtons([1, 2, 3, "...", maxPage])
-    }
+
+
+    setButtons([1, 2, 3, "...", maxPage]);
     if (page === 1) {
       setButtons([1, 2, 3, "...", maxPage])
     }
@@ -28,7 +27,7 @@ const App = () => {
       setButtons([1, "...", page - 1, page, page + 1, "...", maxPage]);
     }
     if (page === maxPage) {
-      setButtons(["...", page - 2, page - 1, page]);
+      setButtons([1, "...", page - 2, page - 1, page]);
     }
     if (page + 2 === maxPage) {
       setButtons([1, "...", page - 1, page, page + 1, page + 2]);
@@ -36,7 +35,8 @@ const App = () => {
     if (page + 1 === maxPage) {
       setButtons([1, "...", page - 1, page, page + 1]);
     }
-  }, [page])
+
+  }, [page, loading])
 
 
   if (loading) {
@@ -88,11 +88,11 @@ const App = () => {
           })}
         </div>
         <div className="pagination">
-          <button onClick={handlePrev} className="btn">prev</button>
+          <button onClick={handlePrev} className="btnPrev">prev</button>
           {buttons.map((button, index) => {
             return <button value={button} key={index} onClick={handleClick} className={`${page == button ? 'active' : button != "..." ? 'btn' : ''}`}>{button}</button>
           })}
-          <button onClick={handleNext} className="btn" >next</button>
+          <button onClick={handleNext} className="btnNext" >next</button>
         </div>
       </>
     )
